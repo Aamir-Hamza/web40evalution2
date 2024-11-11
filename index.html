@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Streaming Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Movie  App</h1>
+    <input type="text" id="search" placeholder="Search Movies..." />
+    <select id="genreFilter">
+      <option value="">Filter by Genre</option>
+      <option value="Drama">Drama</option>
+      <option value="Action">Action</option>
+      <option value="Crime">Crime</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+      <option value="Comedy">Comedy</option>
+    </select>
+    <button id="sortRating">Sort by Rating</button>
+    <button id="sortReleaseDate">Sort by Release Date</button>
+  </header>
+
+  <main>
+    <section id="movieGrid"></section>
+    <div id="pagination">
+      <button id="prevPage" disabled>Prev</button>
+      <button id="nextPage" disabled>Next</button>
+    </div>
+  </main>
+
+  <!-- Movie Modal -->
+  <div id="movieModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="movieTitle"></h2>
+      <p><strong>Director:</strong> <span id="movieDirector"></span></p>
+      <p><strong>Cast:</strong> <span id="movieCast"></span></p>
+      <p><strong>Duration:</strong> <span id="movieDuration"></span> minutes</p>
+      <p><strong>Release Date:</strong> <span id="movieReleaseDate"></span></p>
+      <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+      <p><strong>Tags:</strong> <span id="movieTags"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
