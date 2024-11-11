@@ -1,94 +1,164 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    
-    background-color: pink;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0,0, 0.1);
-  }
-  
-  #search {
-    padding: 10px;
-    margin: 10px;
-    width: 30%;
-  }
-  
-  #genreFilter {
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  button {
-    padding: 10px;
-    margin: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-     border-radius: 20px;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-  }
-  
-  #movieGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .movie-card {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  
-  .movie-card img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  #pagination {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: #333;
-    cursor: pointer;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#search, #genreFilter, button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#search {
+  width: 40%;
+  max-width: 300px;
+}
+
+#genreFilter, button {
+  background-color: #34495e;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  transition: background-color 0.3s;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: #2c3e50;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Main Grid Styling */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.movie-card h3 {
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* Pagination Styling */
+#pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#pagination button {
+  margin: 5px;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.modal-content span {
+  color: #34495e;
+}
